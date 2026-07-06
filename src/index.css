@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #2E36D7;
+  --secondary-color: #F5F6FA;
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  --text-muted: #888888;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-color: #E0E0E0;
+  --card-bg: #FFFFFF;
+  --input-bg: #F9F9F9;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  border: 1px solid var(--border-color);
+}
