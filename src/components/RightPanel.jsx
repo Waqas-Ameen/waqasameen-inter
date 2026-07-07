@@ -2,7 +2,6 @@ import { useState } from 'react';
 import InputField from './InputField';
 import SocialLogin from './SocialLogin';
 import Logo from './Logo';
-import './RightPanel.css';
 
 const RightPanel = () => {
   const [formData, setFormData] = useState({

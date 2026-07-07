@@ -1,3 +1,11 @@
+/* ============================================
+   GREELANCE UI - GLOBAL STYLESHEET
+   Single file containing all project styles
+   ============================================ */
+
+/* ============================================
+   1. CSS VARIABLES & DESIGN TOKENS
+   ============================================ */
 :root {
   --primary-color: #2E36D7;
   --secondary-color: #F5F6FA;
@@ -12,10 +20,18 @@
   --transition-speed: 0.3s;
 }
 
+/* ============================================
+   2. GLOBAL RESET & BASE STYLES
+   ============================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -24,6 +40,8 @@ body {
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 button {
@@ -31,10 +49,610 @@ button {
   font-family: 'Poppins', sans-serif;
   border: none;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input {
   font-family: 'Poppins', sans-serif;
   outline: none;
   border: 1px solid var(--border-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ============================================
+   3. APP CONTAINER LAYOUT
+   ============================================ */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ============================================
+   4. LEFT PANEL
+   ============================================ */
+.left-panel {
+  flex: 1;
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.left-panel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   5. RIGHT PANEL
+   ============================================ */
+.right-panel {
+  flex: 1;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* ============================================
+   6. SIGNUP CARD
+   ============================================ */
+.signup-card {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.brand-logo {
+  height: 36px;
+  object-fit: contain;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+/* ============================================
+   7. SIGNUP FORM
+   ============================================ */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.password-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.bullet-icon {
+  width: 6px;
+  height: 6px;
+  background-color: var(--success-color);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.signup-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  margin-top: 10px;
+  width: 100%;
+}
+
+.signup-btn:hover {
+  background-color: #232abc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 54, 215, 0.3);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(46, 54, 215, 0.2);
+}
+
+/* ============================================
+   8. SIGN-IN PROMPT
+   ============================================ */
+.signin-prompt {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.signin-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+.signin-link:hover {
+  color: #232abc;
+  text-decoration: underline;
+}
+
+/* ============================================
+   9. SOCIAL LOGIN SECTION
+   ============================================ */
+.social-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social-section p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.social-section p::before,
+.social-section p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 25%;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.social-section p::before {
+  left: 0;
+}
+
+.social-section p::after {
+  right: 0;
+}
+
+.social-login-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-login-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transition-speed);
+}
+
+.social-login-btn:hover {
+  background-color: var(--input-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.social-login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+/* ============================================
+   10. INPUT FIELD
+   ============================================ */
+.custom-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.custom-input {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  transition: all var(--transition-speed);
+  color: var(--text-dark);
+  width: 100%;
+}
+
+.custom-input::placeholder {
+  color: #aaa;
+}
+
+.custom-input:focus {
+  border-color: var(--primary-color);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(46, 54, 215, 0.1);
+}
+
+.custom-input.input-error {
+  border-color: var(--error-color);
+}
+
+.custom-input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+/* ============================================
+   11. RESPONSIVE - LAPTOP (up to 1280px)
+   ============================================ */
+@media (max-width: 1280px) {
+  .left-panel {
+    flex: 0.9;
+  }
+
+  .right-panel {
+    padding: 30px 20px;
+  }
+
+  .signup-card {
+    max-width: 400px;
+    padding: 40px 35px;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .logo-container {
+    margin-bottom: 25px;
+  }
+}
+
+/* ============================================
+   12. RESPONSIVE - TABLET LANDSCAPE (up to 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: row;
+  }
+
+  .left-panel {
+    flex: 0.8;
+  }
+
+  .left-panel-image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .right-panel {
+    padding: 25px 15px;
+  }
+
+  .signup-card {
+    max-width: 380px;
+    padding: 35px 30px;
+    border-radius: 16px;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+  }
+
+  .signup-form {
+    gap: 16px;
+  }
+
+  .social-section {
+    margin-top: 30px;
+  }
+
+  .social-section p {
+    margin-bottom: 20px;
+  }
+
+  .brand-logo {
+    height: 32px;
+  }
+
+  .custom-input {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+    border-radius: 10px;
+  }
+
+  .input-label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .social-login-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .social-login-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ============================================
+   13. RESPONSIVE - TABLET PORTRAIT (up to 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .left-panel {
+    min-height: 220px;
+    max-height: 280px;
+    padding: 0;
+    flex: none;
+    width: 100%;
+  }
+
+  .left-panel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .right-panel {
+    min-height: auto;
+    padding: 30px 20px 40px;
+    flex: none;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .signup-card {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+
+  .signup-form {
+    gap: 18px;
+  }
+
+  .signup-btn {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .social-section {
+    margin-top: 30px;
+  }
+
+  .signin-prompt {
+    margin-top: 20px;
+  }
+
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ============================================
+   14. RESPONSIVE - MOBILE (up to 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  .left-panel {
+    min-height: 180px;
+    max-height: 220px;
+  }
+
+  .right-panel {
+    padding: 20px 16px 30px;
+  }
+
+  .signup-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+    max-width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  .logo-container {
+    margin-bottom: 20px;
+  }
+
+  .brand-logo {
+    height: 30px;
+  }
+
+  .form-title {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+  }
+
+  .signup-form {
+    gap: 14px;
+  }
+
+  .signup-btn {
+    padding: 13px;
+    font-size: 0.95rem;
+    border-radius: 25px;
+  }
+
+  .password-hint {
+    font-size: 0.8rem;
+    margin-top: -6px;
+    margin-bottom: 6px;
+  }
+
+  .signin-prompt {
+    font-size: 0.88rem;
+    margin-top: 18px;
+  }
+
+  .social-section {
+    margin-top: 25px;
+  }
+
+  .social-section p {
+    font-size: 0.82rem;
+    margin-bottom: 18px;
+  }
+
+  .social-section p::before,
+  .social-section p::after {
+    width: 20%;
+  }
+
+  .social-login-container {
+    gap: 16px;
+  }
+
+  .custom-input {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .input-label {
+    font-size: 0.82rem;
+    margin-bottom: 5px;
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+
+  .social-login-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-login-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ============================================
+   15. RESPONSIVE - VERY SMALL MOBILE (up to 360px)
+   ============================================ */
+@media (max-width: 360px) {
+  .left-panel {
+    min-height: 150px;
+    max-height: 180px;
+  }
+
+  .right-panel {
+    padding: 16px 12px 24px;
+  }
+
+  .signup-card {
+    padding: 24px 16px;
+    border-radius: 14px;
+  }
+
+  .brand-logo {
+    height: 26px;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .signup-form {
+    gap: 12px;
+  }
+
+  .signup-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .signin-prompt {
+    font-size: 0.82rem;
+  }
+
+  .social-section p {
+    font-size: 0.78rem;
+  }
+
+  .social-login-container {
+    gap: 12px;
+  }
+
+  .custom-input {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .input-label {
+    font-size: 0.8rem;
+  }
+
+  .social-login-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-login-btn svg {
+    width: 16px;
+    height: 16px;
+  }
 }

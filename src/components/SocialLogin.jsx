@@ -1,4 +1,3 @@
-import './SocialLogin.css';
 import GoogleIcon from './GoogleIcon';
 import LinkedInIcon from './LinkedInIcon';
 import AppleIcon from './AppleIcon';

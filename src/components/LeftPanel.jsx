@@ -1,5 +1,4 @@
 import leftPanelImg from '../assets/left-panel.png';
-import './LeftPanel.css';
 
 const LeftPanel = () => {
   return (

@@ -1,5 +1,3 @@
-import './InputField.css';
-
 const InputField = ({ label, type, name, placeholder, value, onChange, error }) => {
   return (
     <div className="custom-input-group">

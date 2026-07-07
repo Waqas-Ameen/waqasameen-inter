@@ -1,6 +1,5 @@
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
-import './App.css';
 
 function App() {
   return (
