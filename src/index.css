@@ -120,10 +120,10 @@ input {
    ============================================ */
 .signup-card {
   background-color: var(--card-bg);
-  width: min(100%, 440px);
-  border-radius: clamp(16px, 2vw, 24px);
-  padding: clamp(28px, 3vw, 48px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  width: min(100%, 344.25px);
+  border-radius: 40.5px;
+  padding: 32px 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .logo-container {
@@ -296,9 +296,36 @@ input {
   margin-bottom: 8px;
 }
 
+.custom-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper.has-icon .custom-input {
+  padding-left: 44px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7eb6;
+}
+
 .custom-input {
-  padding: 14px 16px;
-  border-radius: 12px;
+  height: 52px;
+  padding: 0 18px;
+  border-radius: 40.5px;
   background-color: var(--input-bg);
   border: 1px solid var(--border-color);
   font-size: 0.95rem;
@@ -308,13 +335,19 @@ input {
 }
 
 .custom-input::placeholder {
-  color: #aaa;
+  color: #aeb8d5;
 }
 
 .custom-input:focus {
   border-color: var(--primary-color);
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(46, 54, 215, 0.1);
+  box-shadow: 0 0 0 3px rgba(46, 54, 215, 0.12);
+}
+
+.helper-text {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #707f9e;
 }
 
 .custom-input.input-error {

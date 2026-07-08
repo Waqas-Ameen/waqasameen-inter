@@ -75,6 +75,7 @@ const RightPanel = () => {
             value={formData.email}
             onChange={handleChange}
             error={errors.email}
+            autoComplete="email"
           />
           
           <InputField 
@@ -85,6 +86,8 @@ const RightPanel = () => {
             value={formData.password}
             onChange={handleChange}
             error={errors.password}
+            autoComplete="new-password"
+            helperText="Use at least 6 characters."
           />
 
           <InputField 
@@ -95,12 +98,8 @@ const RightPanel = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
             error={errors.confirmPassword}
+            autoComplete="new-password"
           />
-
-          <div className="password-hint">
-            <span className="bullet-icon"></span>
-            Must be at least 6 characters.
-          </div>
 
           <button type="submit" className="signup-btn">Sign Up</button>
         </form>
