@@ -2371,3 +2371,147 @@ input {
   box-shadow: 0 4px 12px rgba(46, 54, 215, 0.15);
 }
 
+/* ============================================
+   18. STEP 3: CATEGORY SELECTION STYLING
+   ============================================ */
+.category-header-wrap {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.category-main-title {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.08px;
+  color: #050A5F;
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.required-asterisk {
+  color: #D92D20;
+  margin-left: 2px;
+}
+
+.category-sub-title {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.15px;
+  color: #050A5F;
+  margin: 0;
+}
+
+/* Category Grid */
+.categories-grid-selection-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* Individual Pill Card */
+.category-pill-card-item {
+  width: auto;
+  min-width: 213px;
+  height: 55.5px;
+  background: #FFFFFF;
+  border: 1px solid #EAECF0;
+  border-radius: 12px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+.category-pill-card-item:hover {
+  border-color: #3038BD;
+  background-color: #F8F9FE;
+  box-shadow: 0 2px 8px rgba(48, 56, 189, 0.05);
+}
+
+/* Selected Category Card */
+.category-pill-card-item.card-item-selected {
+  border: 1.5px solid #2E36D7;
+  background-color: #EEF0FF;
+}
+
+.category-pill-card-item.card-item-selected .category-pill-icon-container {
+  background-color: #E2E6FF;
+}
+
+/* Icon Container */
+.category-pill-icon-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #F2F4FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.category-pill-icon-container svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Label text */
+.category-pill-label-text {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #050A5F;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+/* Footer & Next Button styling */
+.category-step-next-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.category-next-btn-styled {
+  width: 99px;
+  height: 28.12px;
+  border-radius: 30px;
+  background-color: #2E36D7;
+  color: #FFFFFF;
+  font-family: 'Lexend', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(46, 54, 215, 0.2);
+}
+
+.category-next-btn-styled:hover {
+  background-color: #1e24a5;
+  transform: translateY(-1px);
+}
+
+.category-next-btn-styled:active {
+  transform: translateY(0);
+}
+

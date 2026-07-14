@@ -1,5 +1,219 @@
 import React, { useState, useRef } from 'react';
 
+// SVG Icons for Step 3 Categories
+const EcommerceIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M3 6h18" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M16 10a4 4 0 0 1-8 0" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const CybersecurityIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" fill="#2E36D7"/>
+    <path d="M12 11v4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const CloudIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const MarketingIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const SoftwareIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="3" width="20" height="14" rx="2" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M8 21h8" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 17v4" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M10 8l-2 2 2 2" stroke="#2E36D7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M14 8l2 2-2 2" stroke="#2E36D7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const StaffingIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="8.5" cy="7" r="4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M20 8h-4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M23 12h-7" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M21 16h-5" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const DataCenterIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="12" cy="5" rx="9" ry="3" stroke="#2E36D7" strokeWidth="2" />
+    <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="#2E36D7" strokeWidth="2" />
+    <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6" stroke="#2E36D7" strokeWidth="2" />
+  </svg>
+);
+
+const AIIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="5" y="5" width="14" height="14" rx="2" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="12" cy="12" r="3" stroke="#2E36D7" strokeWidth="1.5"/>
+  </svg>
+);
+
+const BusinessIntelIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 20V10" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 20V4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M6 20v-6" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const DecisionIntelIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M9 18h6" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M10 22h4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const RoboticsIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="11" width="18" height="10" rx="2" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="8" cy="16" r="1.5" fill="#2E36D7"/>
+    <circle cx="16" cy="16" r="1.5" fill="#2E36D7"/>
+    <path d="M9 2h6M12 2v9M4 11s-2-2-2-5M20 11s2-2 2-5" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const VirtualAugmentedIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 9v2.5a3.5 3.5 0 0 1-7 0V9a3.5 3.5 0 0 1-7 0v2.5a3.5 3.5 0 0 1-7 0V9a7 7 0 0 1 14 0" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <rect x="2" y="5" width="20" height="11" rx="4.5" stroke="#2E36D7" strokeWidth="2"/>
+  </svg>
+);
+
+const SystemsIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="20" height="6" rx="1" stroke="#2E36D7" strokeWidth="2"/>
+    <rect x="2" y="10" width="20" height="6" rx="1" stroke="#2E36D7" strokeWidth="2"/>
+    <rect x="2" y="18" width="20" height="6" rx="1" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="6" cy="5" r="1" fill="#2E36D7"/>
+    <circle cx="6" cy="13" r="1" fill="#2E36D7"/>
+    <circle cx="6" cy="21" r="1" fill="#2E36D7"/>
+  </svg>
+);
+
+const CryptoIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M12 6l-3.5 6 3.5 2.5 3.5-2.5L12 6z" stroke="#2E36D7" strokeWidth="1.5" strokeLinejoin="round"/>
+    <path d="M12 18l-3.5-3.5 3.5-1.5 3.5 1.5L12 18z" stroke="#2E36D7" strokeWidth="1.5" strokeLinejoin="round"/>
+  </svg>
+);
+
+const FintechIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="3" width="20" height="13" rx="2" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M12 17v4M8 21h8" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 7v5M10.5 8.5h3" stroke="#2E36D7" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M10.5 10.5h3" stroke="#2E36D7" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const AutonomousIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="9" width="20" height="9" rx="2" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="6.5" cy="18" r="2.5" stroke="#2E36D7" strokeWidth="2" fill="white"/>
+    <circle cx="17.5" cy="18" r="2.5" stroke="#2E36D7" strokeWidth="2" fill="white"/>
+    <path d="M14 9l-2-5H6L4 9" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const MachineLearningIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="5" r="3" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="6" cy="12" r="3" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="18" cy="12" r="3" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="12" cy="19" r="3" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M12 8v8M8.5 10.5l7 3M15.5 10.5l-7 3" stroke="#2E36D7" strokeWidth="1.5"/>
+  </svg>
+);
+
+const EvIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18.8 6a4 4 0 0 0-4 4v4M12 2l-4 8h5l-3 10L17 10h-5l3-8z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IotIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" stroke="#2E36D7" strokeWidth="2"/>
+    <circle cx="12" cy="12" r="4" stroke="#2E36D7" strokeWidth="2"/>
+    <path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke="#2E36D7" strokeWidth="2"/>
+  </svg>
+);
+
+const RecycleIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 11h10l-4-4M17 13H7l4 4" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const SmartHomeIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M9 22V12h6v10" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const QuantumIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="3" fill="#2E36D7"/>
+    <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#2E36D7" strokeWidth="1.5" transform="rotate(30,12,12)"/>
+    <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#2E36D7" strokeWidth="1.5" transform="rotate(-30,12,12)"/>
+  </svg>
+);
+
+const BlockchainIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2E36D7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const onboardingCategoriesList = [
+  { name: 'E Commerce Skills', icon: <EcommerceIcon /> },
+  { name: 'Cybersecurity Engineer', icon: <CybersecurityIcon /> },
+  { name: 'Cloud Computing Engineer', icon: <CloudIcon /> },
+  { name: 'Digital Marketing Expert', icon: <MarketingIcon /> },
+  { name: 'Software Engineering', icon: <SoftwareIcon /> },
+  { name: 'IT Staffing', icon: <StaffingIcon /> },
+  { name: 'Data Center security', icon: <DataCenterIcon /> },
+  { name: 'Artificial Intelligence', icon: <AIIcon /> },
+  { name: 'Business Intelligence', icon: <BusinessIntelIcon /> },
+  { name: 'Decision Intelligence', icon: <DecisionIntelIcon /> },
+  { name: 'Robotics', icon: <RoboticsIcon /> },
+  { name: 'Virtual/Augmented', icon: <VirtualAugmentedIcon /> },
+  { name: 'Systems Engineering', icon: <SystemsIcon /> },
+  { name: 'Cryptocurrency', icon: <CryptoIcon /> },
+  { name: 'Fintech', icon: <FintechIcon /> },
+  { name: 'Autonomus Systems', icon: <AutonomousIcon /> },
+  { name: 'Machine Learning', icon: <MachineLearningIcon /> },
+  { name: 'Electric-Vehicle Technology', icon: <EvIcon /> },
+  { name: 'Internet of Things', icon: <IotIcon /> },
+  { name: 'Recycle-Energy', icon: <RecycleIcon /> },
+  { name: 'Smart-Home', icon: <SmartHomeIcon /> },
+  { name: 'Quantum Computing', icon: <QuantumIcon /> },
+  { name: 'Blockchain', icon: <BlockchainIcon /> }
+];
+
 const UploadResume = ({ onBackToSignup }) => {
   const [step, setStep] = useState(1); // Start at Step 1 by default
   
@@ -41,7 +255,8 @@ const UploadResume = ({ onBackToSignup }) => {
   // Portfolio list (interactive)
   const [portfolioList, setPortfolioList] = useState([]);
 
-  // State for step 3 (Skills)
+  // State for step 3 (Skills & Category Selection)
+  const [selectedCategory, setSelectedCategory] = useState('E Commerce Skills');
   const [availableSkills, setAvailableSkills] = useState([
     'UI/UX Designer', 'Product Design', 'Wireframing', 'Prototype', 'User Flow',
     'Mobile App Design', 'Responsive Web Design', 'Accessibility', 'Adobe Creative Suite',
@@ -50,7 +265,7 @@ const UploadResume = ({ onBackToSignup }) => {
     'Cybersecurity Engineer', 'Cloud Computing Engineer', 'Digital Marketing Expert', 
     'Software Engineering', 'E Commerce Skills'
   ]);
-  const [selectedSkills, setSelectedSkills] = useState(['UI/UX Designer', 'Product Design', 'Wireframing', 'Prototype', 'User Flow']);
+  const [selectedSkills, setSelectedSkills] = useState(['E Commerce Skills']);
   const [newSkillText, setNewSkillText] = useState('');
 
   // State for step 4 (Wallet)
@@ -372,7 +587,7 @@ const UploadResume = ({ onBackToSignup }) => {
       <h1 className="figma-step-info-title">
         {step === 1 && "V1.F1.4 (Upload Resume)"}
         {step === 2 && "V1.F1.1.A(U1) Setup Profile"}
-        {step === 3 && "V1.F1.2 Choose Skills"}
+        {step === 3 && "V1.F1.6-A-(Choose Skill-Step 3-Freelancer)"}
         {step === 4 && "V1.F1.3 Connect Wallet"}
         {step === 5 && "V1.F1.5 Profile Overviews"}
       </h1>
@@ -1044,45 +1259,45 @@ const UploadResume = ({ onBackToSignup }) => {
             </div>
           )}
 
-          {/* STEP 3: CHOOSE SKILLS */}
+          {/* STEP 3: CHOOSE SKILLS (CATEGORY GRID) */}
           {step === 3 && (
             <div className="onboarding-step-content choose-skills-step">
-              <h2 className="step-content-heading">Select Skills</h2>
-              <p className="step-content-subheading">Choose up to 15 skills. Select skills that match your experience.</p>
-              
-              <div className="skill-counter-badge">
-                Selected: <span className="counter-accent">{selectedSkills.length}</span>/15
+              <div className="category-header-wrap">
+                <h2 className="category-main-title">
+                  Category<span className="required-asterisk">*</span>
+                </h2>
+                <p className="category-sub-title">
+                  Select a category from the following.
+                </p>
               </div>
 
-              <form onSubmit={handleAddCustomSkill} className="add-custom-skill-inline">
-                <input 
-                  type="text" 
-                  value={newSkillText}
-                  onChange={e => setNewSkillText(e.target.value)}
-                  placeholder="Add custom skill..."
-                  className="onboard-text-input"
-                />
-                <button type="submit" className="add-skill-trigger-btn">Add</button>
-              </form>
-
-              <div className="skills-options-tags-grid">
-                {availableSkills.map(skill => (
-                  <button 
-                    key={skill}
-                    onClick={() => toggleSkill(skill)}
-                    className={`skill-tag-toggle-btn ${selectedSkills.includes(skill) ? 'tag-selected' : ''}`}
-                  >
-                    {skill}
-                    <span className="tag-toggle-icon">
-                      {selectedSkills.includes(skill) ? '✓' : '+'}
-                    </span>
-                  </button>
-                ))}
+              <div className="categories-grid-selection-container">
+                {onboardingCategoriesList.map((cat) => {
+                  const isSelected = selectedCategory === cat.name;
+                  return (
+                    <div
+                      key={cat.name}
+                      onClick={() => {
+                        setSelectedCategory(cat.name);
+                        setSelectedSkills([cat.name]);
+                      }}
+                      className={`category-pill-card-item ${
+                        isSelected ? 'card-item-selected' : ''
+                      }`}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <div className="category-pill-icon-container">
+                        {cat.icon}
+                      </div>
+                      <span className="category-pill-label-text">{cat.name}</span>
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="step-actions-footer">
-                <button className="primary-action-btn wide-action" onClick={handleNext}>
-                  Next: Connect Wallet
+              <div className="category-step-next-footer">
+                <button className="category-next-btn-styled" onClick={handleNext}>
+                  Next
                 </button>
               </div>
             </div>
@@ -1172,11 +1387,9 @@ const UploadResume = ({ onBackToSignup }) => {
                 </div>
 
                 <div className="review-skills-block">
-                  <h4>Skills Provided</h4>
+                  <h4>Category Selected</h4>
                   <div className="preview-tags-flex">
-                    {selectedSkills.map(s => (
-                      <span className="static-skill-chip" key={s}>{s}</span>
-                    ))}
+                    <span className="static-skill-chip">{selectedCategory || 'None Selected'}</span>
                   </div>
                 </div>
               </div>
