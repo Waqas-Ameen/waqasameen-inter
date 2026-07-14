@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 const UploadResume = ({ onBackToSignup }) => {
-  const [step, setStep] = useState(2); // Start at Step 2 by default for this view
+  const [step, setStep] = useState(1); // Start at Step 1 by default
   
   // State for step 1 (Upload Resume)
   const [selectedFile, setSelectedFile] = useState(null);
@@ -30,64 +30,16 @@ const UploadResume = ({ onBackToSignup }) => {
   });
 
   // Education list (interactive)
-  const [educationList, setEducationList] = useState([
-    {
-      id: 1,
-      degree: 'Bachelor in UX Designing',
-      university: 'University Of Punjab College of Art & Design',
-      startMonth: 'September',
-      startYear: '2013',
-      endMonth: 'September',
-      endYear: '2013'
-    }
-  ]);
+  const [educationList, setEducationList] = useState([]);
 
   // Experience list (interactive)
-  const [experienceList, setExperienceList] = useState([
-    {
-      id: 1,
-      position: 'Network Support Engineer',
-      workPlace: 'Central Texas Collage',
-      startMonth: 'September',
-      startYear: '2013',
-      endMonth: 'September',
-      endYear: '2013',
-      currentlyWorking: true,
-      description: ''
-    },
-    {
-      id: 2,
-      position: 'Network Support Engineer',
-      workPlace: 'Central Texas Collage',
-      startMonth: 'September',
-      startYear: '2013',
-      endMonth: 'September',
-      endYear: '2013',
-      currentlyWorking: false,
-      description: ''
-    }
-  ]);
+  const [experienceList, setExperienceList] = useState([]);
 
   // Certifications list (interactive)
-  const [certificationsList, setCertificationsList] = useState([
-    {
-      id: 1,
-      certificateName: 'Certificate of Appreciation',
-      certificateLink: 'http://dbhceucgcjkndckjwchouwhjcuo',
-      fileName: 'certificate_appreciation.pdf'
-    }
-  ]);
+  const [certificationsList, setCertificationsList] = useState([]);
 
   // Portfolio list (interactive)
-  const [portfolioList, setPortfolioList] = useState([
-    {
-      id: 1,
-      title: '',
-      portfolioLink: '',
-      fileName: '',
-      description: ''
-    }
-  ]);
+  const [portfolioList, setPortfolioList] = useState([]);
 
   // State for step 3 (Skills)
   const [availableSkills, setAvailableSkills] = useState([
@@ -134,6 +86,83 @@ const UploadResume = ({ onBackToSignup }) => {
           clearInterval(interval);
           setIsUploading(false);
           setUploadSuccess(true);
+
+          // Populate step 2 data automatically with mock resume information
+          setProfileData({
+            firstName: 'John',
+            lastName: 'Smith',
+            countryResidence: 'United States',
+            countryCitizenship: 'United States',
+            phoneCode: '+1',
+            phoneNumber: '201 555 -0123',
+            englishProficiency: 'Fluent',
+            noticePeriod: 'Immediate',
+            jobCommitment: 'Part-time',
+            hourlyRate: '300',
+            timeZone: 'EST'
+          });
+
+          setEducationList([
+            {
+              id: Date.now(),
+              degree: 'Bachelor in UX Designing',
+              university: 'University Of Punjab College of Art & Design',
+              startMonth: 'September',
+              startYear: '2013',
+              endMonth: 'September',
+              endYear: '2013'
+            }
+          ]);
+
+          setExperienceList([
+            {
+              id: Date.now(),
+              position: 'Network Support Engineer',
+              workPlace: 'Central Texas Collage',
+              startMonth: 'September',
+              startYear: '2013',
+              endMonth: 'September',
+              endYear: '2013',
+              currentlyWorking: true,
+              description: ''
+            },
+            {
+              id: Date.now() + 1,
+              position: 'Network Support Engineer',
+              workPlace: 'Central Texas Collage',
+              startMonth: 'September',
+              startYear: '2013',
+              endMonth: 'September',
+              endYear: '2013',
+              currentlyWorking: false,
+              description: ''
+            }
+          ]);
+
+          setCertificationsList([
+            {
+              id: Date.now(),
+              certificateName: 'Certificate of Appreciation',
+              certificateLink: 'http://dbhceucgcjkndckjwchouwhjcuo',
+              fileName: 'certificate_appreciation.pdf'
+            }
+          ]);
+
+          setPortfolioList([
+            {
+              id: Date.now(),
+              title: 'UX Portfolio Mockup',
+              portfolioLink: 'http://myportfolio.design',
+              fileName: 'ux_portfolio.pdf',
+              description: 'My selected design layouts'
+            }
+          ]);
+
+          // Auto transition to step 2 after 1 second
+          setTimeout(() => {
+            setStep(2);
+          }, 1000);
+
           return 100;
         }
         return prev + 10;
@@ -670,12 +699,10 @@ const UploadResume = ({ onBackToSignup }) => {
 
               {/* Section 2: Education */}
               <div className="profile-section-block">
-                <div className="section-block-header">
-                  <h2 className="profile-section-heading">Education</h2>
-                  <button className="add-section-pill-btn" onClick={addEducation}>
-                    <span className="plus-sign">+</span> Add Education
-                  </button>
-                </div>
+                <h2 className="profile-section-heading">Education</h2>
+                <button className="add-section-pill-btn" onClick={addEducation}>
+                  <span className="plus-sign">+</span> Add Education
+                </button>
 
                 <div className="nested-records-stack">
                   {educationList.map(edu => (
@@ -759,12 +786,10 @@ const UploadResume = ({ onBackToSignup }) => {
 
               {/* Section 3: Experience */}
               <div className="profile-section-block">
-                <div className="section-block-header">
-                  <h2 className="profile-section-heading">Experience</h2>
-                  <button className="add-section-pill-btn" onClick={addExperience}>
-                    <span className="plus-sign">+</span> Add Experience
-                  </button>
-                </div>
+                <h2 className="profile-section-heading">Experience</h2>
+                <button className="add-section-pill-btn" onClick={addExperience}>
+                  <span className="plus-sign">+</span> Add Experience
+                </button>
 
                 <div className="nested-records-stack">
                   {experienceList.map(exp => (
@@ -874,12 +899,10 @@ const UploadResume = ({ onBackToSignup }) => {
 
               {/* Section 4: Certifications */}
               <div className="profile-section-block">
-                <div className="section-block-header">
-                  <h2 className="profile-section-heading">Certifications</h2>
-                  <button className="add-section-pill-btn" onClick={addCertification}>
-                    <span className="plus-sign">+</span> Add Certification
-                  </button>
-                </div>
+                <h2 className="profile-section-heading">Certifications</h2>
+                <button className="add-section-pill-btn" onClick={addCertification}>
+                  <span className="plus-sign">+</span> Add Certification
+                </button>
 
                 <div className="nested-records-stack">
                   {certificationsList.map(cert => (
@@ -937,12 +960,10 @@ const UploadResume = ({ onBackToSignup }) => {
 
               {/* Section 5: Portfolio */}
               <div className="profile-section-block">
-                <div className="section-block-header">
-                  <h2 className="profile-section-heading">Portfolio</h2>
-                  <button className="add-section-pill-btn" onClick={addPortfolio}>
-                    <span className="plus-sign">+</span> Add Portfolio
-                  </button>
-                </div>
+                <h2 className="profile-section-heading">Portfolio</h2>
+                <button className="add-section-pill-btn" onClick={addPortfolio}>
+                  <span className="plus-sign">+</span> Add Portfolio
+                </button>
 
                 <div className="nested-records-stack">
                   {portfolioList.map(port => (
