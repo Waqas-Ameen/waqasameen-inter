@@ -2417,35 +2417,63 @@ input {
   margin-bottom: 30px;
 }
 
-/* Individual Pill Card */
+/* Individual Pill Card (Default matches full size PNG dimensions from Figma) */
 .category-pill-card-item {
-  width: auto;
-  min-width: 213px;
+  width: 213px;
   height: 55.5px;
-  background: #FFFFFF;
-  border: 1px solid #EAECF0;
   border-radius: 12px;
-  padding: 0 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  overflow: hidden;
+  position: relative;
   transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  border: 1px solid transparent;
   user-select: none;
 }
 
 .category-pill-card-item:hover {
-  border-color: #3038BD;
-  background-color: #F8F9FE;
-  box-shadow: 0 2px 8px rgba(48, 56, 189, 0.05);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(48, 56, 189, 0.08);
 }
 
 /* Selected Category Card */
 .category-pill-card-item.card-item-selected {
   border: 1.5px solid #2E36D7;
-  background-color: #EEF0FF;
+  box-shadow: 0 0 0 3px rgba(46, 54, 215, 0.12);
 }
 
-.category-pill-card-item.card-item-selected .category-pill-icon-container {
+/* Entire card image tag */
+.category-pill-entire-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback active style */
+.category-pill-card-item.fallback-active {
+  width: auto;
+  min-width: 213px;
+  background: #FFFFFF;
+  border: 1px solid #EAECF0;
+  padding: 0 20px;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-pill-card-item.fallback-active:hover {
+  border-color: #3038BD;
+  background-color: #F8F9FE;
+  box-shadow: 0 2px 8px rgba(48, 56, 189, 0.05);
+  transform: none;
+}
+
+.category-pill-card-item.fallback-active.card-item-selected {
+  border: 1.5px solid #2E36D7;
+  background-color: #EEF0FF;
+  box-shadow: none;
+}
+
+.category-pill-card-item.fallback-active.card-item-selected .category-pill-icon-container {
   background-color: #E2E6FF;
 }
 
@@ -2465,6 +2493,20 @@ input {
 .category-pill-icon-container svg {
   width: 18px;
   height: 18px;
+}
+
+.category-pill-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.category-pill-icon-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Label text */

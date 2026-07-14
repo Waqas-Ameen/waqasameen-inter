@@ -189,29 +189,29 @@ const BlockchainIcon = () => (
 );
 
 const onboardingCategoriesList = [
-  { name: 'E Commerce Skills', icon: <EcommerceIcon /> },
-  { name: 'Cybersecurity Engineer', icon: <CybersecurityIcon /> },
-  { name: 'Cloud Computing Engineer', icon: <CloudIcon /> },
-  { name: 'Digital Marketing Expert', icon: <MarketingIcon /> },
-  { name: 'Software Engineering', icon: <SoftwareIcon /> },
-  { name: 'IT Staffing', icon: <StaffingIcon /> },
-  { name: 'Data Center security', icon: <DataCenterIcon /> },
-  { name: 'Artificial Intelligence', icon: <AIIcon /> },
-  { name: 'Business Intelligence', icon: <BusinessIntelIcon /> },
-  { name: 'Decision Intelligence', icon: <DecisionIntelIcon /> },
-  { name: 'Robotics', icon: <RoboticsIcon /> },
-  { name: 'Virtual/Augmented', icon: <VirtualAugmentedIcon /> },
-  { name: 'Systems Engineering', icon: <SystemsIcon /> },
-  { name: 'Cryptocurrency', icon: <CryptoIcon /> },
-  { name: 'Fintech', icon: <FintechIcon /> },
-  { name: 'Autonomus Systems', icon: <AutonomousIcon /> },
-  { name: 'Machine Learning', icon: <MachineLearningIcon /> },
-  { name: 'Electric-Vehicle Technology', icon: <EvIcon /> },
-  { name: 'Internet of Things', icon: <IotIcon /> },
-  { name: 'Recycle-Energy', icon: <RecycleIcon /> },
-  { name: 'Smart-Home', icon: <SmartHomeIcon /> },
-  { name: 'Quantum Computing', icon: <QuantumIcon /> },
-  { name: 'Blockchain', icon: <BlockchainIcon /> }
+  { name: 'E Commerce Skills', iconUrl: '/images/categories/E Commerce Skills.png', icon: <EcommerceIcon /> },
+  { name: 'Cybersecurity Engineer', iconUrl: '/images/categories/Cybersecurity Engineer.png', icon: <CybersecurityIcon /> },
+  { name: 'Cloud Computing Engineer', iconUrl: '/images/categories/Cloud Computing Engineer.png', icon: <CloudIcon /> },
+  { name: 'Digital Marketing Expert', iconUrl: '/images/categories/Digital Marketing Expert.png', icon: <MarketingIcon /> },
+  { name: 'Software Engineering', iconUrl: '/images/categories/Software Engineering.png', icon: <SoftwareIcon /> },
+  { name: 'IT Staffing', iconUrl: '/images/categories/IT Staffing.png', icon: <StaffingIcon /> },
+  { name: 'Data Center security', iconUrl: '/images/categories/Data Center security.png', icon: <DataCenterIcon /> },
+  { name: 'Artificial Intelligence', iconUrl: '/images/categories/Artificial Intelligence.png', icon: <AIIcon /> },
+  { name: 'Business Intelligence', iconUrl: '/images/categories/Business Intelligence.png', icon: <BusinessIntelIcon /> },
+  { name: 'Decision Intelligence', iconUrl: '/images/categories/Decision Intelligence.png', icon: <DecisionIntelIcon /> },
+  { name: 'Robotics', iconUrl: '/images/categories/Robotics.png', icon: <RoboticsIcon /> },
+  { name: 'Virtual/Augmented', iconUrl: '/images/categories/VirtualAugmented.png', icon: <VirtualAugmentedIcon /> },
+  { name: 'Systems Engineering', iconUrl: '/images/categories/Systems Engineering.png', icon: <SystemsIcon /> },
+  { name: 'Cryptocurrency', iconUrl: '/images/categories/Cryptocurrency.png', icon: <CryptoIcon /> },
+  { name: 'Fintech', iconUrl: '/images/categories/Fintech.png', icon: <FintechIcon /> },
+  { name: 'Autonomus Systems', iconUrl: '/images/categories/Autonomus Systems.png', icon: <AutonomousIcon /> },
+  { name: 'Machine Learning', iconUrl: '/images/categories/Machine Learning.png', icon: <MachineLearningIcon /> },
+  { name: 'Electric-Vehicle Technology', iconUrl: '/images/categories/Electric-Vehicle Technology.png', icon: <EvIcon /> },
+  { name: 'Internet of Things', iconUrl: '/images/categories/Internet of Things.png', icon: <IotIcon /> },
+  { name: 'Recycle-Energy', iconUrl: '/images/categories/Recycle-Energy.png', icon: <RecycleIcon /> },
+  { name: 'Smart-Home', iconUrl: '/images/categories/Smart-Home.png', icon: <SmartHomeIcon /> },
+  { name: 'Quantum Computing', iconUrl: '/images/categories/Quantum Computing.png', icon: <QuantumIcon /> },
+  { name: 'Blockchain', iconUrl: '/images/categories/Blockchain.png', icon: <BlockchainIcon /> }
 ];
 
 const UploadResume = ({ onBackToSignup }) => {
@@ -1286,10 +1286,28 @@ const UploadResume = ({ onBackToSignup }) => {
                       }`}
                       style={{ cursor: 'pointer' }}
                     >
-                      <div className="category-pill-icon-container">
+                      <img 
+                        src={cat.iconUrl} 
+                        alt={cat.name}
+                        className="category-pill-entire-card-img"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          const parent = e.target.parentElement;
+                          if (parent) {
+                            parent.classList.add('fallback-active');
+                            const htmlParts = parent.querySelectorAll('.category-card-html-part');
+                            htmlParts.forEach(el => el.style.display = 'flex');
+                          }
+                        }}
+                      />
+
+                      {/* Fallback HTML elements - visible only if the full image fails to load */}
+                      <div className="category-pill-icon-container category-card-html-part" style={{ display: 'none' }}>
                         {cat.icon}
                       </div>
-                      <span className="category-pill-label-text">{cat.name}</span>
+                      <span className="category-pill-label-text category-card-html-part" style={{ display: 'none' }}>
+                        {cat.name}
+                      </span>
                     </div>
                   );
                 })}
