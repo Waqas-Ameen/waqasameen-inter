@@ -3,7 +3,7 @@ import InputField from './InputField';
 import SocialLogin from './SocialLogin';
 import Logo from './Logo';
 
-const RightPanel = () => {
+const RightPanel = ({ onSignupSuccess }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -53,7 +53,11 @@ const RightPanel = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      alert('Signup Successful!');
+      if (onSignupSuccess) {
+        onSignupSuccess();
+      } else {
+        alert('Signup Successful!');
+      }
     }
   };
 
