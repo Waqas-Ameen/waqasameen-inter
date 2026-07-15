@@ -788,6 +788,7 @@ input {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  height: 85.5px; /* updated header height to 85.5px matching Figma */
 }
 
 .stepper-back-btn {
@@ -799,6 +800,7 @@ input {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   transition: background-color 0.2s ease;
+  width: 87.75px; /* updated back button width to 87.75px */
 }
 
 .stepper-back-btn:hover {
@@ -828,48 +830,65 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16px 20px;
+  padding: 7.5px 31.5px;
   cursor: pointer;
   background-color: #FFFFFF;
   border-right: 1px solid #F0F2F5;
+  box-shadow: 0px -2.25px 0px #D2D4FF; /* Default uncompleted shadow line */
   transition: all 0.3s ease;
   user-select: none;
+  height: 85.5px;
 }
 
 .step-tab-item:last-child {
   border-right: none;
+  border-radius: 0px 0px 22.5px 0px;
 }
 
 .step-tab-num {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #98A2B3;
-  margin-bottom: 2px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.15px;
+  color: #D0D2ED;
+  margin-bottom: 5.25px;
 }
 
 .step-tab-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #344054;
+  font-family: 'Lexend', sans-serif;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #D0D2ED;
   white-space: nowrap;
+}
+
+/* Completed Step style - color number green */
+.step-tab-item.completed-step-tab {
+  background-color: #FFFFFF;
+  box-shadow: 0px -2.25px 0px #22D3A6;
+}
+
+.step-tab-item.completed-step-tab .step-tab-num {
+  color: #4ADF86;
+}
+
+.step-tab-item.completed-step-tab .step-tab-label {
+  color: #3038BD;
 }
 
 /* Active Step Style */
 .step-tab-item.active-step {
-  background-color: #E0E2FE; /* Matches active light purple-blue spec */
+  background-color: #E6EFFF; /* Matches active light purple-blue spec */
+  box-shadow: 0px -2.25px 0px #D2D4FF;
 }
 
 .step-tab-item.active-step .step-tab-num {
-  color: #050A5F; /* Active Navy */
+  color: #4ADF86;
 }
 
 .step-tab-item.active-step .step-tab-label {
-  color: #050A5F; /* Active Navy */
-}
-
-/* Completed Step style - color number green */
-.step-tab-item.completed-step-tab .step-tab-num {
-  color: #22D3A6;
+  color: #3038BD;
 }
 
 /* Logout Button */
@@ -2419,9 +2438,9 @@ input {
 
 /* Individual Pill Card (Default matches full size PNG dimensions from Figma) */
 .category-pill-card-item {
-  width: 213px;
+  width: auto;
   height: 55.5px;
-  border-radius: 12px;
+  border-radius: 7.5px;
   overflow: hidden;
   position: relative;
   transition: all 0.2s ease-in-out;
@@ -2438,56 +2457,50 @@ input {
 /* Selected Category Card */
 .category-pill-card-item.card-item-selected {
   border: 1.5px solid #2E36D7;
+  border-radius: 7.5px;
   box-shadow: 0 0 0 3px rgba(46, 54, 215, 0.12);
 }
 
 /* Entire card image tag */
 .category-pill-entire-card-img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
 /* Fallback active style */
 .category-pill-card-item.fallback-active {
-  width: auto;
-  min-width: 213px;
-  background: #FFFFFF;
-  border: 1px solid #EAECF0;
-  padding: 0 20px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
-  gap: 12px;
+  padding: 11.25px 15px;
+  gap: 14.25px;
+  background: #F3F7FF;
+  border: 1.5px solid #E0E2FE;
+  border-radius: 7.5px;
 }
 
 .category-pill-card-item.fallback-active:hover {
-  border-color: #3038BD;
-  background-color: #F8F9FE;
-  box-shadow: 0 2px 8px rgba(48, 56, 189, 0.05);
-  transform: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(48, 56, 189, 0.08);
 }
 
 .category-pill-card-item.fallback-active.card-item-selected {
   border: 1.5px solid #2E36D7;
-  background-color: #EEF0FF;
-  box-shadow: none;
-}
-
-.category-pill-card-item.fallback-active.card-item-selected .category-pill-icon-container {
-  background-color: #E2E6FF;
+  background-color: #E0E2FE;
+  box-shadow: 0 0 0 3px rgba(46, 54, 215, 0.12);
 }
 
 /* Icon Container */
 .category-pill-icon-container {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background-color: #F2F4FE;
+  width: 33px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background-color 0.2s ease;
 }
 
 .category-pill-icon-container svg {
@@ -2509,17 +2522,24 @@ input {
   justify-content: center;
 }
 
-/* Label text */
+/* Label text styling based on Figma specifications */
 .category-pill-label-text {
   font-family: 'Lexend', sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 10.5px;
+  line-height: 22px;
+  letter-spacing: 0px;
   color: #050A5F;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex: 1;
+  flex: none;
 }
 
 /* Footer & Next Button styling */
@@ -2533,19 +2553,20 @@ input {
 .category-next-btn-styled {
   width: 99px;
   height: 28.12px;
-  border-radius: 30px;
-  background-color: #2E36D7;
+  border-radius: 16.875px;
+  background-color: #3038BD;
   color: #FFFFFF;
   font-family: 'Lexend', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 13px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(46, 54, 215, 0.2);
+  box-shadow: 0 4px 10px rgba(48, 56, 189, 0.2);
 }
 
 .category-next-btn-styled:hover {

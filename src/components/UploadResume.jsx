@@ -189,29 +189,29 @@ const BlockchainIcon = () => (
 );
 
 const onboardingCategoriesList = [
-  { name: 'E Commerce Skills', iconUrl: '/images/categories/E Commerce Skills.png', icon: <EcommerceIcon /> },
-  { name: 'Cybersecurity Engineer', iconUrl: '/images/categories/Cybersecurity Engineer.png', icon: <CybersecurityIcon /> },
-  { name: 'Cloud Computing Engineer', iconUrl: '/images/categories/Cloud Computing Engineer.png', icon: <CloudIcon /> },
-  { name: 'Digital Marketing Expert', iconUrl: '/images/categories/Digital Marketing Expert.png', icon: <MarketingIcon /> },
-  { name: 'Software Engineering', iconUrl: '/images/categories/Software Engineering.png', icon: <SoftwareIcon /> },
-  { name: 'IT Staffing', iconUrl: '/images/categories/IT Staffing.png', icon: <StaffingIcon /> },
-  { name: 'Data Center security', iconUrl: '/images/categories/Data Center security.png', icon: <DataCenterIcon /> },
-  { name: 'Artificial Intelligence', iconUrl: '/images/categories/Artificial Intelligence.png', icon: <AIIcon /> },
-  { name: 'Business Intelligence', iconUrl: '/images/categories/Business Intelligence.png', icon: <BusinessIntelIcon /> },
-  { name: 'Decision Intelligence', iconUrl: '/images/categories/Decision Intelligence.png', icon: <DecisionIntelIcon /> },
-  { name: 'Robotics', iconUrl: '/images/categories/Robotics.png', icon: <RoboticsIcon /> },
-  { name: 'Virtual/Augmented', iconUrl: '/images/categories/VirtualAugmented.png', icon: <VirtualAugmentedIcon /> },
-  { name: 'Systems Engineering', iconUrl: '/images/categories/Systems Engineering.png', icon: <SystemsIcon /> },
-  { name: 'Cryptocurrency', iconUrl: '/images/categories/Cryptocurrency.png', icon: <CryptoIcon /> },
-  { name: 'Fintech', iconUrl: '/images/categories/Fintech.png', icon: <FintechIcon /> },
-  { name: 'Autonomus Systems', iconUrl: '/images/categories/Autonomus Systems.png', icon: <AutonomousIcon /> },
-  { name: 'Machine Learning', iconUrl: '/images/categories/Machine Learning.png', icon: <MachineLearningIcon /> },
-  { name: 'Electric-Vehicle Technology', iconUrl: '/images/categories/Electric-Vehicle Technology.png', icon: <EvIcon /> },
-  { name: 'Internet of Things', iconUrl: '/images/categories/Internet of Things.png', icon: <IotIcon /> },
-  { name: 'Recycle-Energy', iconUrl: '/images/categories/Recycle-Energy.png', icon: <RecycleIcon /> },
-  { name: 'Smart-Home', iconUrl: '/images/categories/Smart-Home.png', icon: <SmartHomeIcon /> },
-  { name: 'Quantum Computing', iconUrl: '/images/categories/Quantum Computing.png', icon: <QuantumIcon /> },
-  { name: 'Blockchain', iconUrl: '/images/categories/Blockchain.png', icon: <BlockchainIcon /> }
+  { name: 'E Commerce Skills', iconUrl: '/images/categories/E Commerce Skills.png', icon: <EcommerceIcon />, width: '213px', titleWidth: '95px' },
+  { name: 'Cybersecurity Engineer', iconUrl: '/images/categories/Cybersecurity Engineer.png', icon: <CybersecurityIcon />, width: '252.75px', titleWidth: '122px' },
+  { name: 'Cloud Computing Engineer', iconUrl: '/images/categories/Cloud Computing Engineer.png', icon: <CloudIcon />, width: '279.75px', titleWidth: '140px' },
+  { name: 'Digital Marketing Expert', iconUrl: '/images/categories/Digital Marketing Expert.png', icon: <MarketingIcon />, width: '263.25px', titleWidth: '128px' },
+  { name: 'Software Engineering', iconUrl: '/images/categories/Software Engineering.png', icon: <SoftwareIcon />, width: '240.75px', titleWidth: '113px' },
+  { name: 'IT Staffing', iconUrl: '/images/categories/IT Staffing.png', icon: <StaffingIcon />, width: '159px', titleWidth: '57px' },
+  { name: 'Data Center security', iconUrl: '/images/categories/Data Center security.png', icon: <DataCenterIcon />, width: '232.5px', titleWidth: '108px' },
+  { name: 'Artificial Intelligence', iconUrl: '/images/categories/Artificial Intelligence.png', icon: <AIIcon />, width: '236.25px', titleWidth: '110px' },
+  { name: 'Business Intelligence', iconUrl: '/images/categories/Business Intelligence.png', icon: <BusinessIntelIcon />, width: '236.25px', titleWidth: '110px' },
+  { name: 'Decision Intelligence', iconUrl: '/images/categories/Decision Intelligence.png', icon: <DecisionIntelIcon />, width: '235.5px', titleWidth: '109px' },
+  { name: 'Robotics', iconUrl: '/images/categories/Robotics.png', icon: <RoboticsIcon />, width: '141.75px', titleWidth: '45px' },
+  { name: 'Virtual/Augmented', iconUrl: '/images/categories/VirtualAugmented.png', icon: <VirtualAugmentedIcon />, width: '223.5px', titleWidth: '101px' },
+  { name: 'Systems Engineering', iconUrl: '/images/categories/Systems Engineering.png', icon: <SystemsIcon />, width: '235.5px', titleWidth: '109px' },
+  { name: 'Cryptocurrency', iconUrl: '/images/categories/Cryptocurrency.png', icon: <CryptoIcon />, width: '194.25px', titleWidth: '81px' },
+  { name: 'Fintech', iconUrl: '/images/categories/Fintech.png', icon: <FintechIcon />, width: '132.75px', titleWidth: '39px' },
+  { name: 'Autonomus Systems', iconUrl: '/images/categories/Autonomus Systems.png', icon: <AutonomousIcon />, width: '229.5px', titleWidth: '105px' },
+  { name: 'Machine Learning', iconUrl: '/images/categories/Machine Learning.png', icon: <MachineLearningIcon />, width: '212.25px', titleWidth: '93px' },
+  { name: 'Electric-Vehicle Technology', iconUrl: '/images/categories/Electric-Vehicle Technology.png', icon: <EvIcon />, width: '284.25px', titleWidth: '142px' },
+  { name: 'Internet of Things', iconUrl: '/images/categories/Internet of Things.png', icon: <IotIcon />, width: '213.75px', titleWidth: '94px' },
+  { name: 'Recycle-Energy', iconUrl: '/images/categories/Recycle-Energy.png', icon: <RecycleIcon />, width: '194.25px', titleWidth: '81px' },
+  { name: 'Smart-Home', iconUrl: '/images/categories/Smart-Home.png', icon: <SmartHomeIcon />, width: '174px', titleWidth: '67px' },
+  { name: 'Quantum Computing', iconUrl: '/images/categories/Quantum Computing.png', icon: <QuantumIcon />, width: '235.5px', titleWidth: '109px' },
+  { name: 'Blockchain', iconUrl: '/images/categories/Blockchain.png', icon: <BlockchainIcon />, width: '159.75px', titleWidth: '57px' }
 ];
 
 const UploadResume = ({ onBackToSignup }) => {
@@ -257,6 +257,7 @@ const UploadResume = ({ onBackToSignup }) => {
 
   // State for step 3 (Skills & Category Selection)
   const [selectedCategory, setSelectedCategory] = useState('E Commerce Skills');
+  const [step3SubStep, setStep3SubStep] = useState('A'); // 'A' or 'B'
   const [availableSkills, setAvailableSkills] = useState([
     'UI/UX Designer', 'Product Design', 'Wireframing', 'Prototype', 'User Flow',
     'Mobile App Design', 'Responsive Web Design', 'Accessibility', 'Adobe Creative Suite',
@@ -566,7 +567,9 @@ const UploadResume = ({ onBackToSignup }) => {
 
   // Navigation
   const handleBack = () => {
-    if (step > 1) {
+    if (step === 3 && step3SubStep === 'B') {
+      setStep3SubStep('A');
+    } else if (step > 1) {
       setStep(prev => prev - 1);
     } else {
       onBackToSignup();
@@ -574,7 +577,9 @@ const UploadResume = ({ onBackToSignup }) => {
   };
 
   const handleNext = () => {
-    if (step < 5) {
+    if (step === 3 && step3SubStep === 'A') {
+      setStep3SubStep('B');
+    } else if (step < 5) {
       setStep(prev => prev + 1);
     } else {
       setCompleted(true);
@@ -587,7 +592,7 @@ const UploadResume = ({ onBackToSignup }) => {
       <h1 className="figma-step-info-title">
         {step === 1 && "V1.F1.4 (Upload Resume)"}
         {step === 2 && "V1.F1.1.A(U1) Setup Profile"}
-        {step === 3 && "V1.F1.6-A-(Choose Skill-Step 3-Freelancer)"}
+        {step === 3 && (step3SubStep === 'A' ? "V1.F1.6-A-(Choose Skill-Step 3-Freelancer)" : "V1.F1.6-B(Choose Skill-Step 3-Freelancer)")}
         {step === 4 && "V1.F1.3 Connect Wallet"}
         {step === 5 && "V1.F1.5 Profile Overviews"}
       </h1>
@@ -1259,65 +1264,116 @@ const UploadResume = ({ onBackToSignup }) => {
             </div>
           )}
 
-          {/* STEP 3: CHOOSE SKILLS (CATEGORY GRID) */}
+          {/* STEP 3: CHOOSE SKILLS (CATEGORY GRID OR CHOOSE SKILL TAGS) */}
           {step === 3 && (
             <div className="onboarding-step-content choose-skills-step">
-              <div className="category-header-wrap">
-                <h2 className="category-main-title">
-                  Category<span className="required-asterisk">*</span>
-                </h2>
-                <p className="category-sub-title">
-                  Select a category from the following.
-                </p>
-              </div>
+              {step3SubStep === 'A' ? (
+                <>
+                  <div className="category-header-wrap">
+                    <h2 className="category-main-title">
+                      Category<span className="required-asterisk">*</span>
+                    </h2>
+                    <p className="category-sub-title">
+                      Select a category from the following.
+                    </p>
+                  </div>
 
-              <div className="categories-grid-selection-container">
-                {onboardingCategoriesList.map((cat) => {
-                  const isSelected = selectedCategory === cat.name;
-                  return (
-                    <div
-                      key={cat.name}
-                      onClick={() => {
-                        setSelectedCategory(cat.name);
-                        setSelectedSkills([cat.name]);
-                      }}
-                      className={`category-pill-card-item ${
-                        isSelected ? 'card-item-selected' : ''
-                      }`}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      <img 
-                        src={cat.iconUrl} 
-                        alt={cat.name}
-                        className="category-pill-entire-card-img"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          const parent = e.target.parentElement;
-                          if (parent) {
-                            parent.classList.add('fallback-active');
-                            const htmlParts = parent.querySelectorAll('.category-card-html-part');
-                            htmlParts.forEach(el => el.style.display = 'flex');
+                  <div className="categories-grid-selection-container">
+                    {onboardingCategoriesList.map((cat) => {
+                      const isSelected = selectedCategory === cat.name;
+                      return (
+                        <div
+                          key={cat.name}
+                          onClick={() => {
+                            setSelectedCategory(cat.name);
+                            setSelectedSkills([cat.name]);
+                            setStep3SubStep('B'); // Navigate instantly to V1.F1.6-B
+                          }}
+                          className={`category-pill-card-item ${
+                            isSelected ? 'card-item-selected' : ''
+                          }`}
+                          style={{ cursor: 'pointer', width: cat.width }}
+                        >
+                          <img 
+                            src={cat.iconUrl} 
+                            alt={cat.name}
+                            className="category-pill-entire-card-img"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              const parent = e.target.parentElement;
+                              if (parent) {
+                                parent.classList.add('fallback-active');
+                                const htmlParts = parent.querySelectorAll('.category-card-html-part');
+                                htmlParts.forEach(el => el.style.display = 'flex');
+                              }
+                            }}
+                          />
+
+                          {/* Fallback HTML elements - visible only if the full image fails to load */}
+                          <div className="category-pill-icon-container category-card-html-part" style={{ display: 'none' }}>
+                            {cat.icon}
+                          </div>
+                          <span 
+                            className="category-pill-label-text category-card-html-part" 
+                            style={{ display: 'none', width: cat.titleWidth }}
+                          >
+                            {cat.name}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="category-step-next-footer">
+                    <button className="category-next-btn-styled" onClick={handleNext}>
+                      Next
+                    </button>
+                  </div>
+                </>
+              ) : (
+                /* Sub-step B: Select sub-skills */
+                <>
+                  <div className="category-header-wrap">
+                    <h2 className="category-main-title">
+                      Skills
+                    </h2>
+                    <p className="category-sub-title">
+                      Choose skills that match your experience in <strong>{selectedCategory}</strong>.
+                    </p>
+                  </div>
+
+                  <div className="skill-counter-badge">
+                    Selected: <span className="counter-accent">{selectedSkills.length}</span>/15
+                  </div>
+
+                  <div className="skills-options-tags-grid" style={{ minHeight: '180px' }}>
+                    {availableSkills.map(skill => (
+                      <button 
+                        key={skill}
+                        onClick={() => {
+                          if (selectedSkills.includes(skill)) {
+                            setSelectedSkills(selectedSkills.filter(s => s !== skill));
+                          } else if (selectedSkills.length < 15) {
+                            setSelectedSkills([...selectedSkills, skill]);
                           }
                         }}
-                      />
+                        className={`skill-tag-toggle-btn ${selectedSkills.includes(skill) ? 'tag-selected' : ''}`}
+                      >
+                        {skill}
+                        <span className="tag-toggle-icon">
+                          {selectedSkills.includes(skill) ? '✓' : '+'}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
 
-                      {/* Fallback HTML elements - visible only if the full image fails to load */}
-                      <div className="category-pill-icon-container category-card-html-part" style={{ display: 'none' }}>
-                        {cat.icon}
-                      </div>
-                      <span className="category-pill-label-text category-card-html-part" style={{ display: 'none' }}>
-                        {cat.name}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="category-step-next-footer">
-                <button className="category-next-btn-styled" onClick={handleNext}>
-                  Next
-                </button>
-              </div>
+                  <div className="category-step-next-footer">
+                    <button className="category-next-btn-styled" onClick={handleNext}>
+                      Next
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           )}
 
